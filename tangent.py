@@ -5,7 +5,7 @@ l = 4*np.pi
 x = np.linspace(-l, l, 1000)
 e = np.linspace(-l, l, 2)
 dx = x[1]-x[0]
-y = x**4 + x**3 - 2 * x**2
+y = np.exp(-abs(x))*np.sin(x)*8
 d = np.gradient(y, dx)
 
 fig = plt.figure(figsize=(15, 15))
@@ -20,5 +20,5 @@ for point in zip(x, y, d):
 #plt.plot(x, y, color='r', linewidth=2)
 plt.xlim([-5, 5])
 plt.ylim([-5, 5])
-plt.savefig('poly.png')
+plt.savefig('exp_sin.png')
 plt.show()
